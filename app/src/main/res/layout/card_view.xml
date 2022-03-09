@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white"
+    android:id="@+id/card_view"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp"
+    app:cardMaxElevation="10dp"
+    android:background="@drawable/custom_card_view"
+    app:cardPreventCornerOverlap="true">
+
+    <!--
+        In the above cardview widget
+        cardelevation property will give elevation to your card view
+        card corner radius will provide radius to your card view
+        card background color will give background color to your card view
+        card max elevation will give the cardview maximum elevation
+        card prevent corner overlap will add padding to CardView on v20 and
+        before to prevent intersections between the Card content and rounded corners.
+        card use compact padding will add padding in API v21+ as well to have the same
+        measurements with previous versions.
+    -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--ImageVIew to display our Course Image-->
+        <ImageView
+            android:id="@+id/idIVCourseImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/app_name"
+            android:padding="5dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <!--Text View to display Course Name-->
+        <TextView
+            android:id="@+id/idTVCourseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/idIVCourseImage"
+            android:text="@string/course_name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addbtn"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/idTVCourseName"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/idIVCourseImage"
+
+            android:background="@drawable/custom_add_btn"
+            android:text="add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+       <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/removebtn"
+        android:layout_width="55dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/idTVCourseName"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/idIVCourseImage"
+        android:visibility="gone"
+        android:background="@drawable/custom_add_btn"
+        android:text="Remove"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+
+
+        <!--Text VIew to display COurse Rating-->
+        <!--Image used in present in drawable folder-->
+        <TextView
+            android:id="@+id/idTVCoursePrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVCourseName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/idIVCourseImage"
+            android:drawablePadding="2dp"
+            android:text="Rs.299"
+            android:textColor="@color/purple_500"
+            android:textStyle="bold"
+
+            />
+
+        <RatingBar
+            android:id="@+id/MyRating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVCourseName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@id/idIVCourseImage"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:stepSize="0.10" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
